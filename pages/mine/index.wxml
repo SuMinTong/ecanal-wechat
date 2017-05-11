@@ -1,0 +1,42 @@
+<view class="main">
+<view class="userInfo">
+  <image src="{{userInfo.avatarUrl}}" class="user userPhoto"></image>
+  <view class="user">{{userInfo.nickName}}</view>
+  <image src="../../image/more1.png" style="width:64rpx;height:64rpx" class="more"></image>
+  </view>
+</view>
+
+<navigator url="address" class="info">
+  <image src="../../image/address.png"  class="user userPhoto img"></image>
+  <view class="address">收获地址</view>
+  <image src="../../image/more.png" class="img more"></image>
+</navigator>
+<view class="info">
+  <image src="../../image/order.png"  class="user userPhoto img "></image>
+  <view class="address">我的订单</view>
+  <image src="../../image/more.png" class="img more"></image>
+</view>
+<view class="info">
+  <image src="../../image/cart.png"  class="user userPhoto img"></image>
+  <view class="address">购物车</view>
+  <image src="../../image/more.png" class="img more"></image>
+</view>
+<view style="background:rgb(224,224,224);height:20rpx"></view>
+<view class="info">
+  <image src="../../image/connect.png"  class="user userPhoto img"></image>
+  <view class="address">联系我们</view>
+  <image src="../../image/more.png" class="img more"></image>
+</view>
+<view style="background:rgb(224,224,224);height:20rpx"></view>
+<view class="info">
+  <image src="../../image/suggestion.png"  class="user userPhoto img"></image>
+  <view class="address">意见反馈</view>
+  <image src="../../image/more.png" class="img more"></image>
+</view>
+<view style="background:rgb(224,224,224);height:20rpx"></view>
+
+<view class="info">
+  <image src="../../image/suggestion.png"  class="user userPhoto img"></image>
+  <view class="address">意见反馈</view>
+  <image src="../../image/more.png" class="img more">{{code}}</image>
+</view>

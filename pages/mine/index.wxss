@@ -1,0 +1,47 @@
+/* pages/mine/index.wxss */
+.main{
+  margin: 0;
+  height: 100%;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  padding: 0;
+  font-size:16px;
+}
+.userInfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url("http://4554585.s21i-4.faiusr.com/2/ABUIABACGAAg0o_RyAUoq-ucoQMwgAg49QI.jpg");
+  /*background-size: 100% 200rpx;*/
+  height: 250rpx;
+  color: white;
+  font-family: 微软雅黑;
+}
+.user{
+  margin-left: 30rpx
+}
+.userPhoto{
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 100%;
+    margin-right: 50rpx
+}
+
+.info{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 2rpx solid #e3e3e3;
+  padding: 30rpx
+}
+.img{
+  width: 64rpx;
+  height: 64rpx;
+}
+.more{
+  position: absolute;
+  right: 40rpx
+}

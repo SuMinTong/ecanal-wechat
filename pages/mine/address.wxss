@@ -1,0 +1,17 @@
+/* pages/mine/address.wxss */
+
+.main {
+  margin: 30rpx;
+}
+
+.address_des {
+  margin-top: 30rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.address {
+  color: #e3e3e3;
+  font-size: 40rpx;
+}

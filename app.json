@@ -1,0 +1,70 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/home/about",
+    "pages/home/summary",
+    "pages/home/scanCode",
+    "pages/mine/index",
+    "pages/product/index",
+    "pages/consult/index",
+    "pages/map/index",
+    "pages/news/index",
+    "pages/publish/index",
+    "pages/forum/index",
+    "pages/mine/address",
+    "pages/services/index",
+    "pages/readProduct/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3366cc",
+    "navigationBarTitleText": "e运河",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": "true"
+  },
+  "tabBar": {
+    "color": "#aaa",
+    "selectedColor": "#f00",
+    "borderStyle": "#fff",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/home_select.png"
+      },
+      {
+        "pagePath": "pages/consult/index",
+        "text": "咨询",
+        "iconPath": "image/consult.png",
+        "selectedIconPath": "image/consult_select.png"
+      },
+      {
+        "pagePath": "pages/publish/index",
+        "text": "发布",
+        "iconPath": "image/publish.png",
+        "selectedIconPath": "image/publish_select.png"
+      },
+      {
+        "pagePath": "pages/forum/index",
+        "text": "论坛",
+        "iconPath": "image/message.png",
+        "selectedIconPath": "image/message_select.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "image/mine.png",
+        "selectedIconPath": "image/mine_select.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug":true
+}

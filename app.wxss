@@ -1,0 +1,40 @@
+/**app.wxss**/
+page{
+  margin: 0
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+.imgTextImg{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 2rpx solid #e3e3e3;
+  padding: 30rpx
+}
+.text{
+  margin-left: 100rpx
+}
+.textImg{
+  width: 64rpx;
+  height: 64rpx;
+  position: absolute;
+}
+.textImg_left{
+  left: 40rpx
+}
+.textImg_right{
+  right: 40rpx
+}
+.slide-image{
+  width: 100%;
+}
+
+
+

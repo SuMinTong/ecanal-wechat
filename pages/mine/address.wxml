@@ -1,0 +1,12 @@
+<view class="main">
+<view class="classname">{{address.userName}}</view>
+<view class="address_des">
+  <view class="address">{{address.provinceName}}</view>
+  <view class="address">{{address.cityName}}</view>
+  <view class="address">{{address.countyName}}</view>
+  <view class="address">{{address.detailInfo}}</view>
+  <view class="address">{{address.postalCode}}</view>
+</view>
+
+
+</view>

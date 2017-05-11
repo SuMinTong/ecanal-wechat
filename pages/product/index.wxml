@@ -1,0 +1,21 @@
+
+<view class="top-tab flex-wrp flex-tab ">
+  <block wx:key="item" wx:for="{{cates}}">
+    <view class="toptab flex-item" >
+      <view class=" toptab flex-item {{current_index == index ?  'cur-ch-tab' : 'ch-tab'}} span" data-index="{{index}}" data-cid="{{item.cid}}" bindtap="switchTab">{{item.name}}</view>
+    </view>
+  </block>
+</view>
+
+<scroll-view scroll-y="true" class="page_body">
+  <navigator url="../readProduct/index?id={{item.data.id}}" wx:for="{{newInfo}}">
+    <view class="item">
+      <image src="{{item.data.savepath}}" class="image_savepath"></image>
+      <view class="meta">
+        <text class="title">{{item.data.title}}</text>
+        <text class="author">{{item.data.author}}</text>
+        <text class="update_time">{{item.data.update_time}}</text>
+      </view>
+    </view>
+  </navigator>
+</scroll-view>

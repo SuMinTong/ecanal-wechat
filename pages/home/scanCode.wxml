@@ -1,0 +1,12 @@
+
+<!--pages/home/scanCode.wxml-->
+<view class="main">
+  <view class="page_bady">
+    <view class="">所扫码的内容(长按可复制)：</view>
+    <view class="codeText" bindlongtap="copy" data-text="{{scanCode}}">{{scanCode}}</view>
+  </view>
+  <view class="share">
+    <image src="../../image/shareCode.png" class="img"></image>
+    <view>分享</view>
+  </view>
+</view>
