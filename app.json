@@ -1,70 +1,58 @@
 {
   "pages": [
-    "pages/home/index",
-    "pages/home/about",
-    "pages/home/summary",
-    "pages/home/scanCode",
-    "pages/mine/index",
-    "pages/product/index",
-    "pages/consult/index",
-    "pages/map/index",
-    "pages/news/index",
-    "pages/publish/index",
-    "pages/forum/index",
-    "pages/mine/address",
-    "pages/services/index",
-    "pages/readProduct/index"
+    "pages/home/home",
+    "pages/mine/mine",
+    "pages/service/service",
+    "pages/news/news",
+    "pages/news/comment",
+    "pages/news/details",
+    "pages/consult/consult",
+    "pages/feedback/feedback",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/mine/mineFavo",
+    "pages/mine/mineFavoDetail",
+    "pages/setting/setting",
+    "pages/service/serviceDetail",
+    "pages/detail/detail"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#3366cc",
+    "backgroundTextStyle": "ffffff",
+    "navigationBarBackgroundColor": "#7eb1fe",
     "navigationBarTitleText": "e运河",
-    "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": "true"
+    "navigationBarTextStyle": "#ffffff",
+    "enablePullDownRefresh": false
   },
   "tabBar": {
-    "color": "#aaa",
-    "selectedColor": "#f00",
+    "color": "#e3e3e3",
+    "selectedColor": "#5196ff",
     "borderStyle": "#fff",
-    "backgroundColor": "#ffffff",
+    "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/home/index",
+        "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "image/home.png",
-        "selectedIconPath": "image/home_select.png"
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_select.png"
       },
       {
-        "pagePath": "pages/consult/index",
-        "text": "咨询",
-        "iconPath": "image/consult.png",
-        "selectedIconPath": "image/consult_select.png"
+        "pagePath": "pages/consult/consult",
+        "text": "资询",
+        "iconPath": "images/consult.png",
+        "selectedIconPath": "images/consult_select.png"
       },
       {
-        "pagePath": "pages/publish/index",
-        "text": "发布",
-        "iconPath": "image/publish.png",
-        "selectedIconPath": "image/publish_select.png"
+        "pagePath": "pages/service/service",
+        "text": "服务",
+        "iconPath": "images/service.png",
+        "selectedIconPath": "images/service_select.png"
       },
       {
-        "pagePath": "pages/forum/index",
-        "text": "论坛",
-        "iconPath": "image/message.png",
-        "selectedIconPath": "image/message_select.png"
-      },
-      {
-        "pagePath": "pages/mine/index",
+        "pagePath": "pages/mine/mine",
         "text": "我的",
-        "iconPath": "image/mine.png",
-        "selectedIconPath": "image/mine_select.png"
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine_select.png"
       }
     ]
-  },
-  "networkTimeout": {
-    "request": 10000,
-    "connectSocket": 10000,
-    "uploadFile": 10000,
-    "downloadFile": 10000
-  },
-  "debug":true
+  }
 }

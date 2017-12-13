@@ -10,8 +10,10 @@
  * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
  */
 
+ /*WxEmojiView wxParse-inline  */
+
 .wxParse{
-    margin: 0 5px;
+     margin: 0 20rpx; 
     font-family: Helvetica,sans-serif;
     font-size: 28rpx;
     color: #666;
@@ -20,11 +22,11 @@
 view{
     word-break:break-all; overflow:hidden;
 }
-.wxParse-inline{
+ .wxParse-inline{
     display: inline;
     margin: 0;
     padding: 0;
-}
+} 
 /*//标题 */
 .wxParse-div{margin: 0;padding: 0;}
 .wxParse-h1{ font-size:2em; margin: .67em 0 }

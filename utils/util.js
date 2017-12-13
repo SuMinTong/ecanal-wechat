@@ -1,4 +1,29 @@
-const Promise = require('./Promise')
+
+// var api = "https://aaafs.top/";
+var api = "http://admin.eyunhe.com.cn/";
+function formatTime(date) {
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+
+  var hour = date.getHours()
+  var minute = date.getMinutes()
+  var second = date.getSeconds()
+
+
+  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+}
+
+function formatNumber(n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+module.exports = {
+  formatTime: formatTime
+}
+
+// const Promise = require('./Promise')
 
 const REGX_HTML_DECODE = /&\w{1,};|&#\d{1,};/g;
 const HTML_DECODE = {
@@ -84,54 +109,7 @@ function requstPost(url,data){
   return requst(url,'POST',data)
 }
 
-const DOMAIN = 'https://ssl.52ahu.com/coverHttps.php'
-
-// 小程序上线需要https，这里使用服务器端脚本转发请求为https
-function requst(url,method,data = {}){
-  wx.showNavigationBarLoading()
-  var rewriteUrl = encodeURIComponent(url)
-  data.method = method
-  return new Promise((resove,reject) => {
-    wx.request({
-      url: DOMAIN + '?url=' + rewriteUrl,
-      data: data,
-      header: {},
-      method: method.toUpperCase(), // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      success: function(res){
-        wx.hideNavigationBarLoading()
-        resove(res.data)
-        console.log(url);
-      },
-      fail: function(msg) {
-        console.log('reqest error',msg)
-        wx.hideNavigationBarLoading()
-        reject('fail')
-      }
-    })
-  })
-}
-
-
-function parseNews(newsList){
-  return newsList.map(news => {
-      var {news_id:id,news_title,news_date:date,news_datetime,news_praise_count:parise,news_comment_count:commont,news_summary:summary,news_icon:icons,news_remark:tag,news_style:style,news_column_id:chid} = news
-        if(style === 4){
-            style = 1
-            tag = 'H5'
-        }
-        if(parise > 99){
-          parise = '99+'
-        }
-        if(commont > 99){
-          commont = '99+'
-        }
-        return { id,chid,title:decodeHtml(news_title),date:date||news_datetime,parise,commont,summary,icons,style,tag }
-  })
-}
 
 
 
-module.exports = {
-  makeArray,getCategorys,getUserInfo,Promise,
-  get:requstGet,post:requstPost,requst,decodeHtml,parseNews
-}
+
