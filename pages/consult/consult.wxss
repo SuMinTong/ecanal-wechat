@@ -1,0 +1,50 @@
+/* pages/consult/consult.wxss */
+
+page {
+  /* background: rgb(236, 242, 254); */
+  background: #f0f0f0;
+}
+
+.main {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.sv__container {
+  height: 215rpx;
+  white-space: nowrap;
+  background: #7eb1fe;
+  position: fixed;
+  z-index: 10;
+}
+
+.top-item {
+  padding: 27rpx;
+  display: inline-block;
+  z-index: 1000
+}
+
+.active {
+  padding-bottom: 10rpx;
+  color: #fff;
+  border-bottom: solid 2px #fff;
+}
+
+.page_body {
+  position: relative;
+  top: 100rpx;
+  display: flex;
+  z-index: 10;
+  flex-direction: column;
+}
+
+.Refresh {
+  position: fixed;
+  bottom: 64rpx;
+  height: 64rpx;
+  width: 64rpx;
+  z-index: 100;
+  right: 64rpx;
+}

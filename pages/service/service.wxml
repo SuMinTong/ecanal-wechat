@@ -1,0 +1,70 @@
+<!--pages/service/service.wxml-->
+<loading hidden="{{loading}}">
+  加载中...
+</loading>
+<!--pages/service/service.wxml-->
+<view class="titles">
+  <!-- 绑定事件处理函数bindtap  -->
+  <!-- 给选中的组件，即数组当前项的下标与selectedTitle相等的组件，定义样式名titles-selected -->
+  <block wx:for="{{titles}}">
+    <view id="{{index}}" bindtap="tapmenu" class="title" data-idt="{{item.id}}">
+      <image src="{{item.thumbnail}}"></image>
+      <text class="title-info {{index==selectedTitle ? 'title-selected' : ''}}"> {{item.title}} </text>
+    </view>
+  </block>
+</view>
+
+<!-- <view class="titles" >
+<view class="classname" wx:for="{{titles}}">
+  <view id="{{index}}" bindtap="tapmenu" class="title" data-idt="{{item.id}}">
+    <image src="{{item.thumbnail}}"></image>
+    <text class="title-info {{index==selectedTitle ? 'title-selected' : ''}}"> {{item.title}} </text>
+  </view>
+</view>
+</view> -->
+
+
+
+
+<!--绑定事件处理函数bindchange-->
+<swiper bindchange="bindChange" current='{{selectedTitle}}' style="height:{{swiperHeight}}px">
+  <!-- 设置3个服务页面 -->
+  <!-- E订程 -->
+  <swiper-item>
+    <block wx:for="{{serverList}}" wx:for-item="info">
+      <view class='page' data-idx="{{info.id}}" bindtap="serviceFull">
+        <view class="page-left">
+          <image style="" mode="scaleToFill" src="{{info.thumbnail}}"></image>
+          <text>{{info.title}}</text>
+        </view>
+        <image class="page-right" style="" mode="aspectFit" src="../../images/more.png" binderror="" bindload=""></image>
+      </view>
+    </block>
+  </swiper-item>
+
+  <!-- 全服务 -->
+  <swiper-item>
+    <block wx:for="{{serverList}}" wx:for-item="info">
+      <view class='page' data-idx="{{info.id}}" bindtap="serviceFull">
+        <view class="page-left">
+          <image style="" mode="scaleToFill" src="{{info.thumbnail}}"></image>
+          <text>{{info.title}}</text>
+        </view>
+        <image class="page-right" style="" mode="aspectFit" src="../../images/more.png" binderror="" bindload=""></image>
+      </view>
+    </block>
+  </swiper-item>
+
+  <!-- 合作 -->
+  <swiper-item>
+    <block wx:for="{{serverList}}" wx:for-item="info">
+      <view class='page' data-idx="{{info.id}}" bindtap="serviceFull">
+        <view class="page-left">
+          <image mode="scaleToFill" src="{{info.thumbnail}}"></image>
+          <text>{{info.title}}</text>
+        </view>
+        <image class="page-right" style="" mode="aspectFit" src="../../images/more.png"></image>
+      </view>
+    </block>
+  </swiper-item>
+</swiper>

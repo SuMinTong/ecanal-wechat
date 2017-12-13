@@ -1,0 +1,94 @@
+/* pages/feedback/feedback.wxss */
+
+.main {
+  background: #e3e3e3;
+  overflow: hidden;
+  font-family: "黑体";
+  font-size: 32rpx;
+}
+
+.info {
+  width: 100%;
+  background: #fff;
+  /* border-top: 2rpx #f00 solid; */
+}
+
+.textarea {
+  /* border: 2rpx #f00 solid; */
+  padding-top: 30rpx;
+  width: 90%;
+  height: 200rpx;
+  margin: 0 auto;
+}
+
+.phonedes {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  height: 150rpx;
+  line-height: 100rpx;
+  margin: 0 auto;
+  padding-bottom: 30rpx;
+}
+
+.phone {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.placeholder {
+  padding-top: 5%;
+  padding-left: 5%;
+}
+
+.page {
+  margin-top: 30rpx;
+  background: #fff;
+  color: #000;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center; /*垂直居中*/
+  justify-content: space-between;
+}
+
+.page-left {
+  display: flex;
+  align-items: center;
+  padding-left: 30rpx;
+}
+
+.page-right {
+  width: 27px;
+  height: 48px;
+  margin-right: 40px;
+}
+
+.inputPhone {
+  margin-left: 30rpx;
+}
+
+.link {
+  height: 100rpx;
+  align-items: center; /*垂直居中*/
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  margin-top: 30rpx;
+  padding-left: 30rpx;
+}
+
+.btn{
+  width: 60%;
+  /* height: 30rpx; */
+  color: #fff;
+  letter-spacing: 35rpx;
+  margin-top: 30%;
+  
+}
+.btn1{
+  background: rgb(200, 220, 255)
+}
+.selectbtn1{
+  background: rgb(126, 178, 254)
+}

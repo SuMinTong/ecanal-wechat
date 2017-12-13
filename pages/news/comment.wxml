@@ -1,0 +1,49 @@
+<view class="main">
+  <form bindsubmit="submitComment">
+    <textarea name="commentContent" placeholder="请输入评论内容" style="top: 20rpx;height:100rpx;border:2rpx #e3e3e3 solid;width:90%;margin:0 auto;padding:10rpx" />
+    <button form-type="submit" class="btn">提交</button>
+  </form>
+</view>
+<view style="height:50rpx;width:100%;background:#e3e3e3;margin-top:20rpx;padding:20rpx">已提交的评论</view>
+
+<view class="commentMain" wx:for="{{comment_content}}" wx:if="{{item.iuser}}">
+  <!--头像，昵称，时间，点赞数，评论数  -->
+  <view class="commentTop">
+    <!-- 头像，昵称，时间 -->
+    <view class="commentLeft" data-idx="{{item.id}}" bindtap="readDetails">
+      <view class="classname">
+        <image src="{{item.user_phone}}" class="commentIcon"></image>
+      </view>
+      <!--用户头像结束  -->
+      <view class="commentNameTime">
+        <view class="commentName" style="color:#6285de">{{item.user_name}}</view>
+        <view class="commentName">{{item.comment_time}}</view>
+      </view>
+    </view>
+    <!--点赞数，评论数  -->
+    <!--对评论点赞  -->
+    <view class="commentRight">
+      <view class="right_content" data-idt="{{item.id}}" bindtap="commentLike">
+        <view>{{item.comment_likes}}</view>
+        <view wx:if="{{item.islike}}">
+          <image src="../../images/select_laud.png" class="commentIcon1"></image>
+        </view>
+        <view wx:else>
+          <image src="../../images/laud.png" class="commentIcon1"></image>
+        </view>
+      </view>
+      <!--对评论回复  -->
+      <view class="right_content" data-idt="{{item.id}}" bindtap="replyComment">
+        <view>{{item.comment_comment_number}}</view>
+        <view class="classname" wx:if="{{item.iuser}}">
+          <image src="../../images/select_comment.png" class="commentIcon1"></image>
+        </view>
+        <view class="classname" wx:else>
+          <image src="../../images/comment.png" class="commentIcon1"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="comment_content" data-idx="{{item.id}}" bindtap="readDetails">{{item.comment_content}}</view>
+
+</view>

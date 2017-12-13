@@ -1,0 +1,14 @@
+<!--pages/mine/mineFavo.wxml-->
+    <block wx:for="{{myfavo}}" wx:for-item="info" >
+      <view class='page' data-idx="{{info.id}}" data-name="{{info.name}}" bindtap="readDetail">
+        <view class="page-left">
+          <!-- <image style="" mode="scaleToFill" src="{{info.thumbnail}}"></image> -->
+          <text class="text">{{info.name}}</text>
+          <text class="text">({{info.cnumber}})</text>
+        </view>
+        <image class="page-right" style="" mode="aspectFit" src="../../images/more.png" binderror="" bindload=""></image>    
+      </view>
+    </block>
+<loading hidden="{{hidden}}">
+  加载中...
+</loading>

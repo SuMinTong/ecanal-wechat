@@ -1,0 +1,28 @@
+<!--pages/register/register.wxml-->
+<view class="main" style="height:{{Height}}px">
+  <!-- <image src="../../images/bg.png" class="bg"></image> -->
+  <view class="logo">
+     <image src="../../images/logo.png" class="logoIcon"></image> 
+    <!-- <image src="../../images/logotext.png" class="logoText"></image> -->
+    <view class="form">
+      <form bindsubmit="register">
+      <image src="../../images/phone.png" class="icon photo" style="margin-top:8%;"></image>
+        <input placeholder="请输入用户名" class="input" placeholder-class="placeholder" name="username" bindblur="inputUserName" />
+        <image src="../../images/photo.png" class="icon photo"></image>
+        <input placeholder="请输入您的手机号进行验证" class="input" placeholder-class="placeholder" name="content" bindblur="inputPhone" />
+        <button wx:if="{{code}}" class="btn1" bindtap="sendMessageCode">验证码</button>
+        <button wx:else class="btn1" style="font-size:32rpx">{{count}}秒</button>
+        <image src="../../images/code.png" class="icon" style="margin-top:32rpx;"></image>
+        <input placeholder="请输入六位验证码" class="input phoneCode" placeholder-class="placeholder" name="phoneCode" bindblur="inputPhoneCode" />
+
+        <image src="../../images/pwd.png" class="icon pwd"></image>
+        <input placeholder="请输入密码" class="input" type="password" placeholder-class="placeholder" name="member_pwd_1" />
+         <image src="../../images/pwd.png" class="icon pwd"></image>
+        <input placeholder="请输入密码" class="input" type="password" placeholder-class="placeholder" name="member_pwd_2" />
+        <button form-type="submit" class="btn">立即注册</button>
+      </form>
+    </view>
+  </view>
+
+
+</view>

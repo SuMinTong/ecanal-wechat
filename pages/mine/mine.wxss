@@ -1,0 +1,80 @@
+/* pages/mine/index.wxss */
+
+page {
+  background: #f0f0f0;
+}
+
+.layer {
+  height: 410rpx;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: #1b88ed;
+  opacity: 0.4;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-family: 微软雅黑;
+}
+
+.userInfo {
+  position: absolute;
+  margin-top: 45rpx;
+  top: 0;
+  right: 38%;
+}
+
+.user {
+  text-align: center;
+}
+
+.text {
+  font-size: 38rpx;
+}
+
+.userPhoto {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100%;
+}
+
+.Collection1 {
+  display: inline-block;
+  position: fixed;
+  top: 30%;
+  left: 2.5%;
+  box-shadow: 10px #1170ff;
+}
+
+.item {
+  display: flex;
+  align-items: center; /*这句可以使内容垂直居中*/
+  height: 120rpx;
+  line-height: 150rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  width: 95%;
+  margin: 0 auto;
+  border-bottom: 3rpx #e3e3e3 solid;
+}
+
+.contain {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+}
+
+.icon {
+  width: 85rpx;
+  height: 85rpx;
+  margin-left: 10%;
+  margin-right: 5%;
+}
+
+.contact::after {
+  border: none;
+}

@@ -1,0 +1,36 @@
+/* pages/mine/mineFavoDetail.wxss */
+.page_body {
+  position: relative;
+  display: flex;
+  z-index: 10;
+  background: #f0f0f0;
+  flex-direction: column;
+}
+
+.goodsitem {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2rpx #e3e3e3 solid;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.rusume {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2rpx #e3e3e3 solid;
+  width: 90%;
+  /* margin: 0 auto; */
+  padding: 32rpx
+
+}
+
+.rusumeTop,.rusumeBot {
+  padding-top: 20rpx;
+}
+.rt{
+  margin-right: 6%
+}
+.rb{
+  margin-right: 11%
+}

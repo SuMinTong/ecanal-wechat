@@ -1,0 +1,76 @@
+<view class="main">
+  <view class="host">
+    <view class="name">
+      <view class="classname" wx:if="{{Default}}">
+        <image src="../../images/phone.png" class="icon"></image>
+      </view>
+      <view class="classname" wx:else>
+        <image src="{{comment_content.user_phone}}" class="icon"></image>
+      </view>
+      <view class="name_left">
+        <text>{{comment_content.user_name}}</text>
+        <text>{{comment_content.comment_time}}</text>
+      </view>
+    </view>
+    <text class="comment_content">{{comment_content.comment_content}}</text>
+
+
+    <view class="content">
+    <!--评论  -->
+      <view class="item" data-idx="{{comment_content.id}}" bindtap="replyComment">
+        <!-- <view wx:if="{{comment}}"> -->
+          <image src="../../images/comment.png" class="icon"></image>
+        <!-- </view> -->
+        <!-- <view wx:else>
+          <image src="../../images/select_comment.png" class="icon"></image>
+        </view> -->
+        <view class="likes">{{comment_content.comment_number}}</view>
+      </view>
+      <!--点赞  -->
+      <view class="item" bindtap="laud">
+        <view wx:if="{{comment_content.islike}}">
+          <image src="../../images/select_laud.png" class="icon"></image>
+        </view>
+        <view wx:else>
+          <image src="../../images/laud.png" class="icon"></image>
+        </view>
+        <view class="likes">{{comment_content.comment_likes}}</view>
+      </view>
+    </view>
+  </view>
+
+ <view class="replyComment"  hidden="{{hidden}}">
+  <view class="form">
+    <form bindsubmit="submitReplyComment">
+      <textarea name="commentContent" placeholder="请输入评论内容" style="top: 20rpx;height:100rpx;border:2rpx #e3e3e3 solid;width:90%;margin:0 auto;padding:10rpx" />
+    <button form-type="submit" class="btn">提交</button>
+    </form>
+  </view>
+</view> 
+
+  <text style="margin-left:32rpx;">回复评论({{comment_content.comment_number}}条)</text>
+
+  <view class="replyComment">
+    <block wx:for="{{replyComment}}">
+      <view class="photoName">
+        <view class="classname" wx:if="{{item.user_phone == null}}">
+          <image src="../../images/phone.png" class="icon"></image>
+        </view>
+        <view class="classname" wx:else>
+          <image src="{{item.user_phone}}" class="icon"></image>
+        </view>
+        <text>{{item.user_name}}</text>
+        <text style="margin-left:60rpx">{{item.comment_time}}</text>
+        <!-- <view class="replyCommentLaud" wx:if="{{item.islike}}">
+          <image src="../../images/select_laud.png" class="icon"></image>
+        </view>
+        <view class="replyCommentLaud" wx:else>
+          <image src="../../images/laud.png" class="icon"></image>
+        </view> -->
+      </view>
+      <text style="padding-left:104rpx">{{item.comment_content}}</text>
+    </block>
+  </view>
+</view>
+
+

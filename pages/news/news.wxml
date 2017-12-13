@@ -1,0 +1,123 @@
+<!--pages/news/news.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+
+<loading hidden="{{loading}}">
+  加载中...
+</loading>
+<!-- <scroll-view></scroll-view> -->
+<scroll-view class="main" scroll-y="{{scroll}}">
+  <view class="title">{{title}}</view>
+  <view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+  <!--评论  -->
+
+  <view class="comment" wx:for="{{comment_content}}">
+    <!--头像，昵称，时间，点赞数，评论数  -->
+    <view class="top">
+      <!-- 头像，昵称，时间 -->
+      <view class="left" data-idx="{{item.id}}" bindtap="readDetails">
+        <!--头像开始，如果有头像，就为用户的头像，否则就是默认头像  -->
+        <!-- <view class="classname" wx:if="{{item.user_phone == null}}">
+          <image src="../../images/phone.png" class="icon"></image>
+        </view> -->
+        <view class="classname">
+          <image src="{{item.user_phone}}" class="commentIcon"></image>
+        </view>
+        <!--用户头像结束  -->
+
+        <view class="nameTime">
+          <view class="name" style="color:#6285de">{{item.user_name}}</view>
+          <view class="name">{{item.comment_time}}</view>
+        </view>
+
+      </view>
+      <!--点赞数，评论数  -->
+      <!--对评论点赞  -->
+      <view class="right">
+        <view class="right_content" data-idt="{{item.id}}" bindtap="commentLike">
+          <view>{{item.comment_likes}}</view>
+          <!-- <image src="../../images/laud.png" class="icon1"></image> -->
+          <view wx:if="{{item.islike}}">
+            <image src="../../images/select_laud.png" class="commentIcon1"></image>
+          </view>
+          <view wx:else>
+            <image src="../../images/laud.png" class="commentIcon1"></image>
+          </view>
+        </view>
+        <!--对评论回复  -->
+        <view class="right_content" data-idx="{{item.id}}" bindtap="readDetails">
+          <view>{{item.comment_comment_number}}</view>
+          <view class="classname" wx:if="{{item.iuser}}">
+            <image src="../../images/select_comment.png" class="commentIcon1"></image>
+          </view>
+          <view class="classname" wx:else>
+            <image src="../../images/comment.png" class="commentIcon1"></image>
+          </view>
+
+        </view>
+      </view>
+    </view>
+    <view class="comment_content" data-idx="{{item.id}}" bindtap="readDetails">{{item.comment_content}}</view>
+  </view>
+
+
+  <view class="foot">
+    <!--收藏  -->
+    <view class="item" bindtap="favo">
+      <view wx:if="{{favo}}">
+        <image src="../../images/select_favo.png" class="commentIcon"></image>
+      </view>
+      <view wx:else>
+        <image src="../../images/favo.png" class="commentIcon"></image>
+      </view>
+
+    </view>
+    <!--评论  -->
+    <view class="item" data-idx="{{item.id}}"  bindtap="comment">
+      <view wx:if="{{comment}}">
+        <image src="../../images/select_comment.png" class="commentIcon"></image>
+      </view>
+      <view wx:else>
+        <image src="../../images/comment.png" class="commentIcon"></image>
+      </view>
+      <view class="likes">{{commentNum}}</view>
+    </view>
+    <!--点赞  -->
+    <view class="item" bindtap="laud">
+      <view wx:if="{{islike}}">
+        <image src="../../images/select_laud.png" class="commentIcon"></image>
+      </view>
+      <view wx:else>
+        <image src="../../images/laud.png" class="commentIcon"></image>
+      </view>
+      <view class="likes">{{like}}</view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="inputComment" hidden="{{flag}}">
+  <view class="form">
+    <form bindsubmit="submitComment">
+      <textarea name="commentContent" placeholder="请输入评论内容" class="textarea" />
+      <button form-type="submit" class="btn submint">提交</button>
+      <button form-type="reset" class="btn cancel" bindtap="cancel">取消</button>
+    </form>
+  </view>
+</view>
+
+<view class="inputComment" hidden="{{hidden}}">
+  <view class="form">
+    <form bindsubmit="submitReplyComment">
+      <textarea name="commentContent" placeholder="请输入评论内容" class="textarea" />
+      <button form-type="submit" class="btn submint">提交</button>
+      <button form-type="submit" class="btn cancel">取消</button>
+    </form>
+  </view>
+</view>
+<!-- <view class="b1" hidden="{{flag}}">
+  <view class="t_w">
+  </view>
+</view> -->
+
+<!-- <view bindtap="a">显示</view> -->

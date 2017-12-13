@@ -1,0 +1,41 @@
+/* pages/mine/mineFavo.wxss */
+
+.page {
+    width: 100%;
+    height: 137rpx;
+    display: flex;
+    align-items: center; /*垂直居中*/
+    justify-content: space-between;
+    color: white;
+    border-top: 1px solid #dcdcdc;
+}
+
+/* .text{
+  margin-left: 60rpx;
+} */
+
+.page:last-child {
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.page-left {
+    display: flex;
+    align-items: center;
+    padding-left: 18rpx;
+}
+
+.page-left image {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.page-left text {
+    color: #626262;
+    margin-left: 30rpx;
+}
+
+.page-right {
+    width: 27px;
+    height: 48px;
+    margin-right: 40px;
+}

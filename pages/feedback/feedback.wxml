@@ -1,0 +1,38 @@
+<view class="main" style="height:{{height}}px">
+  <form bindsubmit="submitFeedback">
+
+    <view class="info">
+      <textarea placeholder="请输入您遇到的问题和建议" class="textarea" bindblur="blueFeedback" placeholder-style="font-size:28rpx;" name="content" />
+      <view class="phonedes">
+        <view class="" wx:for="{{source}}">
+          <image src="{{item.path}}" class="phone" bindtap="ylimg" data-src="{{item.path}}"></image>
+        </view>
+        <image src="../../images/addphone.png" class="phone" bindtap="chooseImg" hidden="{{hidden}}"></image>
+        <!-- <input placeholder="添加图片说明" class="placeholder" placeholder-style="font-size:28rpx;" name="description"/> -->
+      </view>
+    </view>
+    <!--下拉选择意见分类  -->
+    <view class='page' bindtap="actionSheetTap">
+      <view class="page-left">
+        <input class="" name="feedbackCart" value="{{feedbackCart}}" hidden="ture" />
+        <text>请选择分类：{{feedbackCart}}</text>
+      </view>
+      <image class="page-right" mode="aspectFit" src="../../images/more.png" binderror="" bindload=""></image>
+    </view>
+
+    <view class="link ">
+      <text>联系电话</text>
+      <input class="inputPhone" type="number" placeholder="选填，便于我们联系你" placeholder-style="font-size:28rpx;" name="phone" bindblur="phoneBlur" />
+    </view>
+    <view wx:if="{{select}}"><button class="btn btn1" form-type="submit">提交</button></view>
+    <view wx:else><button class="btn selectbtn1" form-type="submit">提交</button></view>
+
+  </form>
+</view>
+
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+  <block wx:for="{{actionSheetItems}}">
+    <action-sheet-item class="item" bindtap="bindItemTap" data-name="{{item.name}}" data-idt="{{item.id}}">{{item.name}}</action-sheet-item>
+  </block>
+  <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>

@@ -1,0 +1,127 @@
+/* pages/home/home.wxss */
+
+page {
+  /* background: rgb(236, 242, 254); */
+   background: #f0f0f0; 
+}
+
+.main {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 宋体;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.top {
+  width: 100%;
+  color: white;
+  background-color: #e3e3e3;
+  height: 400rpx;
+}
+
+.weather_data {
+  background: rgba(0, 0, 0, 0.4);
+  width: 35%;
+  display: inline-block;
+  position: absolute;
+  z-index: 60;
+  margin-left: 20rpx;
+  /* margin-top: 20rpx; */
+}
+
+.weather_top {
+  display: block;
+}
+
+.location {
+  margin-top: 0;
+  padding: 0;
+  height: 40rpx;
+  line-height: 42rpx;
+  /*vertical-align: middle*/
+}
+
+.weather {
+  /*//让内容自动撑大盒子*/
+  display: inline-block;
+  margin-left: 30rpx;
+  margin-bottom: 10rpx;
+  font-size: 32rpx;
+}
+
+.weather_desc {
+  display: inline-block;
+}
+
+.temperature {
+  margin-left: 30rpx;
+}
+
+.pm25 {
+  border-radius: 20rpx;
+  background-color: dodgerblue;
+}
+
+.scan_code {
+  width: 60rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+}
+
+.contain {
+  margin-top: 30rpx;
+  width: 100%;
+  display: inline-block;
+  /* box-shadow: 0 0 10px 10px rgba(0, 0, 0, .6); */
+}
+
+.aboutUS {
+  background: #fff;
+  border-radius: 20rpx;
+  height: 335rpx;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.aboutUS .info {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 0 20rpx 0;
+}
+
+.text {
+  padding-left: 20rpx;
+  color: #5196ff;
+  font-weight: 400;
+  font-size: 36rpx;
+  padding-top: -5rpx;
+}
+
+.pic {
+  width: 30rpx;
+  height: 50rpx;
+}
+
+.line1 {
+  padding-left: 20rpx;
+  width: 20rpx;
+  height: 47rpx;
+}
+
+.more {
+  margin-left: 58%;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.homeImage {
+  width: 100%;
+  height: 300rpx;
+  border-radius: 0 0 20rpx 20rpx;
+}

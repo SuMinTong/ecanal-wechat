@@ -1,0 +1,54 @@
+<!--pages/home/home.wxml-->
+
+<!--整个页面-->
+<view class="main">
+  <!--头部信息,包含当天天气以及搜索框，扫一扫，轮播图-->
+  <view class="top">
+
+    <!--轮播图-->
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="top">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item.thumbnail}}" style="width:100%" />
+        </swiper-item>
+      </block>
+
+      <!--天气情况-->
+      <view class="weather_data">
+        <view class="weather_top" style="margin-top:20rpx;">
+          <view class="weather">{{city}}市</view>
+
+          <view class="weather sky">{{weather.now.cond.txt}}</view>
+          <view class="weather temperature">{{weather.now.tmp}} °C</view>
+          <view class="weather">空气{{weather.aqi.city.qlty}}</view>
+        </view>
+
+        <view class="weather" style="margin-bottom:20rpx">{{weather.now.wind.dir}}{{weather.now.wind.sc}}</view>
+      </view>
+    </swiper>
+  </view>
+</view>
+<!--关于我们-->
+<view class="contain" wx:for="{{list}}">
+  <view class="aboutUS" data-type="关于我们" data-idt="{{item.id}}" bindtap="aboutUs">
+    <view class="info">
+      <image src="../../images/line1.png" class="line1 pic"></image>
+      <view class="text">{{item.title}}</view>
+      <image src="../../images/more.png" class="more pic"></image>
+    </view>
+    <view >
+      <image src="{{item.thumbnail}}" class="homeImage" ></image>
+    </view>
+  </view>
+</view>
+<!--最新动态  -->
+<view class="aboutUS" style="margin-top:30rpx" data-idm="{{newNews.id}}" bindtap="newNews">
+  <view class="info" data-idm="{{newNews.id}}">
+    <image src="../../images/line1.png" class="line1 pic"></image>
+    <view class="text">最新动态</view>
+    <image src="../../images/more.png" class="more pic"></image>
+  </view>
+  <view style="padding-bottom:60rpx;">
+    <image src="{{newNews.thumbnail}}" class="homeImage"></image>
+  </view>
+</view>

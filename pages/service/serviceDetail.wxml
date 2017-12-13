@@ -1,0 +1,8 @@
+<!--pages/service/serviceDetail.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+  <view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:detail.nodes}}" />
+  </view>
+  <loading hidden="{{loading}}">
+  加载中...
+</loading>

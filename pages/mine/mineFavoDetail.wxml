@@ -1,0 +1,67 @@
+<!--pages/mine/mineFavoDetail.wxml-->
+  <loading hidden="{{hidden}}">
+  加载中...
+</loading>
+<view class="main">
+  <!--新闻  -->
+  <view wx:if="{{new1}}">
+    <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" class="page_body" scroll-into-view="{{toView}}">
+      <block wx:for="{{newInfo.news}}">
+        <view class="consultList" data-ids="{{item.id}}" catchtap="redictNews">
+          <image src="{{item.thumbnail}}" class="image_savepath"></image>
+          <view class="consultMeta">
+            <text class="consultTitle">{{item.title}}</text>
+            <text class="consultSummary">{{item.summary}}</text>
+            <view class="consultBottom">
+              <text>{{item.comment}}评论</text>
+              <text class="a">{{item.source}}</text>
+              <text class="a" style="overflow:hidden;width:120rpx;white-space:nowrap;">{{item.time}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+  <!--船员  -->
+  <view wx:elif="{{rusume}}">
+    <block wx:for="{{newInfo.rusume}}">
+      <!-- <text class="title">{{item.intentional_post}}</text> -->
+      <view class="rusume" data-id="{{item.id}}">
+        <view class="rusumeTop">
+          <text class="rt">姓名：{{item.name}}</text>
+          <text class="rt">性别:{{item.sex}}</text>
+          <text class="rt">期望职位：{{item.intentional_post}}</text>
+        </view>
+        <view class="rusumeBot">
+          <text class="rb">年龄：{{item.age}}</text>
+          <text class="rb">工作经验：{{item.work}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!--货源  -->
+  <view wx:elif="{{goods}}">
+    <block wx:for="{{newInfo.goods}}">
+      <view class="goodsitem" data-id="{{item.id}}">
+        <text class="title">{{item.shipping_area}}-{{item.arrival_area}}</text>
+        <!-- <view class="title">{{item.delivery_time}}</view> -->
+        <text class="classname">{{item.goods_name}}</text>
+        <text class="classname">{{item.tonnage}}吨</text>
+      </view>
+    </block>
+  </view>
+
+  <!--船源  -->
+  <view wx:elif="{{ship}}">
+    <block wx:for="{{newInfo.ship}}">
+      <view class="goodsitem" data-id="{{item.id}}">
+        <text class="title">{{item.region}}</text>
+        <text class="classname">{{item.ship_type}}</text>
+        <text class="classname">{{item.tonnage}}吨</text>
+      </view>
+
+    </block>
+  </view>
+
+</view>
