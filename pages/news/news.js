@@ -46,7 +46,6 @@ Page({
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
       success: function (res) {
-        console.log(res);
         if (res.data.collection == 1) {
           that.setData({
             favo: true,
@@ -207,7 +206,6 @@ Page({
     var usercontent = wx.getStorageSync('usercontent');
     let pages = 1;
     let that = this;
-    console.log('评论数', that.data);
     wx.request({
       url: API + '/app_getNewsComment',
       data: {
@@ -220,7 +218,6 @@ Page({
       method: 'GET',
       dataType: '',
       success: function (res) {
-        console.log(res.data);
         that.setData({
           comment_content: res.data
         })

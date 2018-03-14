@@ -27,7 +27,7 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
-          scrollHeight: res.windowHeight
+          scrollHeight: res.windowHeight - 130
         });
       }
     });
@@ -68,14 +68,14 @@ Page({
           navTab: navTab
         })
         let idx = res.data[0].id;
-        console.log("123+++", idx);
+       
         that.getDefaultList(idx);
       },
     })
   },
   getDefaultList: function (e) {
     var that = this;
-    console.log(e);
+   
     that.data.typeid = e;
     wx.request({
       url: API + 'app_getnewsbytype',
@@ -86,7 +86,6 @@ Page({
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
       success: function (res) {
-        console.log(res);
         that.setData({
           newInfo: res.data,
           hidden: true,
@@ -100,7 +99,6 @@ Page({
   },
   switchTab: function (e) {
     var that = this;
-    console.log(e);
     const idx = e.currentTarget.dataset.idx;
     // var typeid;
     that.setData({
@@ -110,7 +108,6 @@ Page({
       title: '加载中',
     })
     let id = e.target.dataset.idx;
-    console.log(id);
     that.data.typeid = id;
     that.getDefaultList(id);
   },
@@ -125,7 +122,6 @@ Page({
       delay: 100,
       transformOrigin: 'center center 0',
       success: function (res) {
-        console.log(res)
       }
     })
   },
@@ -156,6 +152,7 @@ Page({
           method: 'GET',
           dataType: '',
           success: function (res) {
+
             that.setData({
               newInfo: res.data,
             });
@@ -164,7 +161,6 @@ Page({
           fail: function (res) { },
           complete: function (res) {
             wx.hideLoading();
-
           },
         })
       },
@@ -175,12 +171,10 @@ Page({
 
   // 跳转到详情界面
   redictNews: function (e) {
-    console.log(e.currentTarget.dataset.ids);
     var id = e.currentTarget.dataset.ids;
     wx.navigateTo({
       url: '../news/news?id=' + id,
       success: function (res) {
-        console.log("跳转成功", res);
       },
       fail: function (res) {
         // fail

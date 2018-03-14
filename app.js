@@ -1,7 +1,7 @@
 //app.js
 App({
   data: {
-    servsers: "http://admin.eyunhe.com.cn/"
+    servsers: "https://admin.eyunhe.com.cn/"
   },
   onLaunch: function() {
     //调用API从本地缓存中获取数据

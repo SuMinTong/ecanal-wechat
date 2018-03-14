@@ -45,6 +45,7 @@ Page({
       method: 'GET',
       dataType: '',
       success: function (res) {
+        console.log(res);
         let list = res.data;
         that.setData({
           list: list
@@ -87,6 +88,7 @@ Page({
       method: 'GET',
       dataType: '',
       success: function (res) {
+        console.log(res);
 
         let imgUrls = res.data;
         wx.setStorageSync('imgUrls', imgUrls)

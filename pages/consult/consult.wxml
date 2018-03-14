@@ -1,29 +1,30 @@
- <view class="main" > 
-  <scroll-view scroll-x="true" class="sv__container">
+<view class="main">
+<view  class="sv__container">
+  <scroll-view scroll-x="true" style='z-index:1000'>
     <view wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab" class="top-item">
       <text class="{{currentNavtab==idx ? 'active' : ''}}" data-idx="{{itemName.id}}"> {{itemName.title}}</text>
     </view>
   </scroll-view>
+</view>
+
   <loading hidden="{{hidden}}">
-  加载中...
-</loading>
+    加载中...
+  </loading>
   <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" class="page_body" scroll-into-view="{{toView}}" scroll-top="Number">
     <block wx:for="{{newInfo}}">
       <view class="consultList" data-ids="{{item.id}}" catchtap="redictNews">
         <image src="{{item.thumbnail}}" class="image_savepath"></image>
         <view class="consultMeta">
-          <view class="consultTitle" >{{item.title}}</view>
-          <text class="consultSummary" >{{item.summary}}</text>
+          <view class="consultTitle">{{item.title}}</view>
+          <text class="consultSummary">{{item.summary}}</text>
           <view class="consultBottom">
-            <text >{{item.comment}}评论</text>
+            <text>{{item.comment}}评论</text>
             <text class="a">{{item.source}}</text>
             <text class="a" style="overflow:hidden;width:120rpx;white-space:nowrap;">{{item.time}}</text>
           </view>
-
         </view>
       </view>
-
     </block>
   </scroll-view>
-    <image class="Refresh" src="../../images/Refresh.png" bindtap="Refresh" ></image>  
- </view> 
+  <image class="Refresh" src="../../images/Refresh.png" bindtap="Refresh"></image>
+</view>

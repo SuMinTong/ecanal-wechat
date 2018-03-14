@@ -10,14 +10,14 @@ page {
   padding: 0;
   height: 100%;
   width: 100%;
+  position: fixed
 }
 
 .sv__container {
   height: 215rpx;
-  white-space: nowrap;
+   white-space: nowrap; 
   background: #7eb1fe;
-  position: fixed;
-  z-index: 10;
+   position: fixed; 
 }
 
 .top-item {
@@ -38,6 +38,7 @@ page {
   display: flex;
   z-index: 10;
   flex-direction: column;
+  padding-bottom: 50rpx
 }
 
 .Refresh {

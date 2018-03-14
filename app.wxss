@@ -55,8 +55,7 @@
 }
 
 /*图片样式  */
-
-.consultList .image_savepath {
+.image_savepath {
   width: 180rpx;
   height: 160rpx;
   padding: 20rpx;

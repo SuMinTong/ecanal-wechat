@@ -63,14 +63,18 @@ Page({
       method: 'GET',
       dataType: '',
       success: function (res) {
+        
+        // if (res.data.data.length > 0){
+        //   for (var i = 0; i < res.data.data.length; i++) {
+        //     res.data.data[i].area = res.data.data[i].area.replace(/\s/g, '/')
+        //   }
+        // }
+        
         that.setData({
-          newInfo: res.data,
-          hidden:true
-          // rusumeInfo: res.data.rusume,
-          // goodsInfo: res.data.goods,
-          // shipInfo: res.data.ship
+          newInfo: res.data.data,
+          hidden:true,
         })
-        console.log(res);
+        console.log(res.data);
       },
       fail: function (res) { },
       complete: function (res) { },
@@ -86,7 +90,11 @@ Page({
       complete: function (res) { },
     })
   },
-
+replace:function(str){
+  console.log(123,str.replace(/\s/g, '-'))
+  console.log("132546461325154546");
+  return str.replace(/\s/g,'-')
+},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

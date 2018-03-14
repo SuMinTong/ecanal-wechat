@@ -20,7 +20,7 @@ page {
   width: 100%;
   color: white;
   background-color: #e3e3e3;
-  height: 400rpx;
+  height: 280rpx;
 }
 
 .weather_data {
@@ -30,7 +30,7 @@ page {
   position: absolute;
   z-index: 60;
   margin-left: 20rpx;
-  /* margin-top: 20rpx; */
+  top: 10rpx;
 }
 
 .weather_top {
