@@ -6,7 +6,6 @@
     </view>
   </scroll-view>
 </view>
-
   <loading hidden="{{hidden}}">
     加载中...
   </loading>
